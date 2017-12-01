@@ -1,0 +1,534 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[10pt,onecolumn]{article}
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{graphicx}
+\usepackage{listings} 
+\usepackage{caption} 
+\usepackage{xcolor,colortbl}
+\usepackage{mathtools}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+
+\graphicspath{ {figures/} }
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{margin=1in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{polski}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{subfig}
+
+\newtheorem{theorem}{Twierdzenie}
+\theoremstyle{definition}
+\newtheorem{definition}{Definicja}
+\theoremstyle{hypothesis}
+\newtheorem{hypothesis}{Hipoteza}
+\theoremstyle{capability}
+\newtheorem{capability}{Własność}
+
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+\setlength{\parindent}{0.5cm} 
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\newcolumntype{a}{>{\columncolor{Gray}}c}
+\newcolumntype{b}{>{\columncolor{white}}c}
+
+\newcommand{\subsubfloat}[2]{%
+  \begin{tabular}{@{}c@{}}#1\\#2\end{tabular}%
+}
+
+\begin{document}
+
+%=============================================
+% STRONA TYTULOWA
+%=============================================
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.8\textwidth]{title_page}\par\vspace{1cm}
+	\vspace{1.5cm}
+	{\huge\bfseries Tajemnice Liczb Pierwszych\par}
+	\vspace{2cm}
+	{\Large\itshape Marcin Barylski\par}
+	\vfill
+
+\title{}
+\end{titlepage}
+
+%=============================================
+% SPIS TREŚCI
+%=============================================
+
+\tableofcontents
+
+\newpage
+
+%=============================================
+% WPROWADZENIE
+%=============================================
+
+\section{Wprowadzenie}
+
+\subsection{Podzielność liczb}
+
+\begin{definition}[O dzieleniu liczba całkowitych]
+Niech $a$, $b$ $\in$ $\mathbb{Z}$. Mówimy, że $a$ dzieli $b$, zapisując $a$ $\mid$ $b$, jeśli istnieje $c$ $\in$ $\mathbb{Z}$ takie, że $a \times c = b$. W takim wypadku mówimy, że $a$ jest dzielnikiem $b$. Mówimy także, że $a$ nie dzieli $b$, zapisując $a$ $\nmid$ $b$, jeśli nie ma takiego $c$ $\in$ $\mathbb{Z}$, że $a \times c = b$.
+\end{definition}
+
+Jeśli $a \mid b$, to liczbę $b$ nazywamy wielokrotnością liczby $a$.
+
+\begin{definition}[O dzielniku właściwym]
+Dzielnikiem właściwym liczby całkowitej $b$ nazywamy liczbę naturalną $a$ taką, że $a$ $\mid$ $b$ oraz $a \textless b$.
+\end{definition}
+
+\subsection{Liczby pierwsze}
+
+\begin{definition}[O liczbie pierwszej]
+Liczba całkowita $n$ \textgreater 1 jest liczbą pierwszą, jeśli jej jedynymi dodatnimi dzielnikami są 1 oraz $n$. 
+\end{definition}
+
+Definicję *O liczbie pierwszej* można też wyrazić w inny, komplementarny sposób: liczba całkowita $n$ \textgreater 1 jest liczbą pierwszą, jeśli nie jest iloczynem dwóch liczb całkowitych \textgreater 1. Definicja taka akcentuje różnicę liczby pierwszej w porównaniu z liczbą złożoną, która jest iloczynem przynajmniej dwóch liczb całkowitych \textgreater 1. Liczba pierwsza ma dokładnie jeden dzielnik \textgreater 1, równy jej samej. Przykładowo, liczba 11 jest liczbą pierwszą, bowiem jej jedynymi dzielnikami są 1 i 11. Jedynym dzielnikiem właściwym liczby pierwszej jest 1. Sekwencja A000040 przedstawia początkowe liczby pierwsze.
+
+\begin{capability}[Tylko jedna liczba pierwsza jest parzysta]
+Istnieje tylko jedna liczba pierwsza parzysta, 2.
+\end{capability}
+
+Nie może istnieć inna niż 2 liczba parzysta pierwsza, bowiem każda liczba parzysta jest podzielna przez $2$, a jeśli jest większa niż $2$, to posiada przynajmniej jeszcze jeden dzielnik różny od $1$ i $2$. Zatem wśród liczb parzystych istnieje dokładnie jedna liczba, która spełnia definicję *O liczbie pierwszej* i jest nią $2$.
+
+\begin{capability}[Druga i każda kolejna liczba pierwsza są nieparzyste]
+Wszystkie liczby pierwsze większe od 2 są nieparzyste.
+\end{capability}
+
+Wynika to bezpośrednio z własności *Tylko jedna liczba pierwsza jest parzysta*. Istnieją kolejne liczby pierwsze: $3$, $5$, $7$, \ldots i wszystkie są nieparzyste.
+
+\subsection{Liczby złożone}
+
+\begin{definition} [O liczbie złożonej]
+Liczba całkowita $n$ \textgreater 1 jest liczbą złożoną, jeśli nie jest liczbą pierwszą.
+\end{definition}
+
+Liczby $0$ oraz $1$ nie są ani liczbami pierwszymi, ani złożonymi, choć w przeszłości traktowano $1$ jako liczbę pierwszą. Obecnie $1$ nie jest uważana za liczbą pierwszą, gdyż wyłączenie jej ze zbioru liczb pierwszych uprościło *Fundamentalne twierdzenie arytmetyki*, w którym unikatowość rozkładu dowolnej liczby dodatniej \textgreater $1$ na iloczyn liczb pierwszych nie jest zakłócony przez $1$ $\times$ $1$ $\times$ $\ldots$ $\times$ $1$.
+
+\subsection{Dzielniki pierwsze}
+
+Przyjrzyjmy się bliżej dzielnikom liczb naturalnych.
+
+\begin{theorem} [O co najmniej jednym dzielniku pierwszym liczby całkowitej większej od jedności]
+Każda liczba całkowita $n$ \textgreater 1 ma co najmniej jeden dzielnik, który jest liczbą pierwszą. 
+\end{theorem}
+ 
+\begin{proof}
+Niech $n$ jest liczbą całkowitą \textgreater 1. $n$ ma zawsze dzielniki \textgreater 1 - jednym z nich jest $n$.  Wśród dzielników liczby $n$, które są \textgreater 1, zawsze istnieje najmniejszy dzielnik, $p$. Gdyby $p$ nie było liczbą pierwszą, to zgodnie z definicją *O liczbie pierwszej* $p$ byłoby iloczynem dwóch liczb całkowitych $a$ i $b$, obu \textgreater 1, $p = a \times b$. Zarówno $a$ jak i $b$ byłyby mniejsze niż $p$, co jest wbrew definicji $p$.
+\end{proof}
+
+\begin{theorem} [O co najmniej jednym dzielniku pierwszym liczby złożonej mniejszym lub równym niż pierwiastek kwadratowy z liczby]
+Każda liczba złożona $n$ \textgreater 1 ma co najmniej jeden dzielnik $\le$ $\sqrt{n}$, który jest liczbą pierwszą. 
+\end{theorem}
+ 
+\begin{proof}
+Jeśli $n$ jest liczbą złożoną, to istnieją dwie takie liczby całkowite $a$ i $b$ ($a \leq b$), obie mniejsze niż $n$, że: $n = a \times b$. Zatem: $n = a \times b \geq a^2$, skąd wynika, po pierwiastkowaniu obu stron nierówności, że: $a \leq \sqrt{n}$. Liczba $a$ jest \textgreater 1, w przeciwnym razie $b$ nie byłoby mniejsze niż $n$. Zgodnie z twierdzeniem *O co najmniej jednym dzielniku pierwszym liczby całkowitej* liczba $a$ ma dzielnik pierwszy $p$. $p$ jest dzielnikiem dzielnika $a$ liczby $n$, więc $p$ jest też dzielnikiem $n$. $p \leq a \leq \sqrt{n}$, stąd: $p \leq \sqrt{n}$.
+\end{proof}
+
+\newpage
+
+%=============================================
+% LICZBY PIERWSZE JAKO BUDULEC INNYCH LICZB
+%=============================================
+
+\section{Liczby pierwsze jako budulec innych liczb}
+
+\subsection{Liczby naturalne zbudowane z liczb pierwszych}
+
+Zastanówmy się nad reprezentacją dowolnej liczby naturalnej poprzez liczby pierwsze.
+
+\begin{theorem}[Fundamentalne twierdzenie arytmetyki]
+Każda liczba całkowita $n$ \textgreater 1 może zostać zapisana jako iloczyn skończonej liczby liczb pierwszych $p_1$, $p_2$, $p_3$, $\ldots$ , $p_n$, tzn.: $$ n = p_1 \times p_2 \times p_3 \times \ldots \times p_n$$  Rozkład liczby $n$ jest unikatowy, jeśli $p_i$ są uporządkowane w tym rozkładzie, tzn. $p_1$ $\leq$ $p_2$ $\leq$ $\ldots$ $\leq$ $p_n$.
+\end{theorem}
+ 
+\begin{proof}
+TBD
+\end{proof}
+
+\subsection{Liczby doskonałe zbudowane z liczb pierwszych}
+
+Już od czasów starożytnych niektóre liczby uważane były za wyjątkowe. Szczególnie dużo uwagi poświęcano liczbom doskonałym. Euklides opisał je w Elementach, w księdze IX \cite{euklides}.
+
+\begin{definition} [O liczbie doskonałej]
+Liczbą doskonałą nazywamy liczbę naturalną, która jest sumą wszystkich swoich dzielników właściwych.
+\end{definition}
+
+Liczba $6$ jest najmniejszą liczbą doskonałą, bowiem zbiorem jej dzielników właściwych jest $\lbrace 1, 2, 3 \rbrace$ oraz $6 = 1 + 2 +3$. Sekwencja A000396 przedstawia 10 pierwszych liczb doskonałych. Wszystkie znane liczby doskonałe są parzyste. Nie wiadomo, czy istnieją nieparzyste liczby doskonałe.
+
+\begin{theorem}[O parzystych liczbach doskonałych]
+Każda parzysta liczba doskonała jest postaci $(2^p - 1) \times 2^{p - 1}$, gdzie $2^p - 1$ jest liczbą pierwszą.
+\end{theorem}
+
+\begin{proof}
+TBD
+\end{proof}
+
+\begin{definition} [O liczbach Mersenne'a]
+Liczbami Mersenna nazywamy liczby postaci $2^n - 1$, gdzie $n$ jest liczbą naturalną.
+\end{definition}
+
+\subsection{Liczby parzyste zbudowane z liczb pierwszych}
+
+W 1742 roku Christian Goldbach w swoim liście do Leonarda Eulera \cite{goldbach1742} wyraził przypuszczenie, że każda nieparzysta liczba naturalna \textgreater 5 może zostać przedstawiona jako suma trzech liczb pierwszych. W tych czasach traktowano liczbę 1 jako liczbę pierwszą. Euler uprościł tę hipotezę twierdząc, że każda liczba parzysta \textgreater 2 jest sumą dwóch liczb pierwszych. Choć finalny kształt hipotezie nadał Euler, nazywana jest ona Hipotezą Goldbacha. Hipoteza Goldbacha do dnia dzisiejszego nie została rozstrzygnięta i jest jednym z bardziej inspirujących problemów w teorii liczb, mających wpływ na rozwój matematyki w XX i XXI woku. Wraz z hipotezą Riemanna widnieje na miejscu 8 listy Hilberta \cite{hilbert1900}, opisującej otwarte wyzwania matematyczne stojące u progu XX wieku.
+
+\begin{hypothesis}[Hipoteza Goldbacha]
+Każda liczba parzysta \textgreater 2 jest sumą dwóch liczb pierwszych.
+\label{Goldbach_hyp}
+\end{hypothesis}
+
+Równolegle z szukaniem dowodu na prawdziwość hipotezy $\ref{Goldbach_hyp}$, wraz z rozwojem możliwości obliczeniowych komputerów, możliwe stało się jej potwierdzanie dla coraz to większych dodatnich liczb parzystych $n$. Hipoteza została dotychczas potwierdzona empirycznie dla wszystkich $n$ $\leq$ 4 $\times$ $10^{18}$ \cite{oliveira2012}. Dowodu matematycznego, uznanego przez społeczność matematyczną wciąż brak.\par
+
+\begin{definition} [O rozkładzie Goldbacha]
+Wyrażenie danej liczby parzystej $n$ \textgreater 2 jako sumy dwóch liczb pierwszych nosi nazwę rozkładu Goldbacha.
+\end{definition}
+
+\begin{wrapfigure}{hr}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{f_goldbach_pairs}
+  \end{center}
+  \caption{Kometa Goldbacha - liczba możliwych rozkładów Goldbacha dla kolejnych dodatnich liczb parzystych - wykres funkcji $r(n)$ (2 \textless $n$ \textless $10^6$)}
+  \label{fig:goldbach_pairs}
+\end{wrapfigure}
+
+Oznaczmy przez $R(n)$ zbiór wszystkich możliwych rozkładów Goldbacha dla $n$, zaś przez $r(n)$ - liczbę takich możliwych rozkładów dla $n$. 
+Wykres $r(n)$ dla kolejnych $n$ tworzy tzw. kometę Goldbacha (Rysunek $\ref{fig:goldbach_pairs}$), ilustrującą rosnący trend dolnego oszacowania $r(n)$. Sekwencja A045917 przedstawia 98 pierwszych wyrazów $r(n)$.
+
+\subsection{Liczby nieparzyste zbudowane z liczb pierwszych}
+
+Hipoteza Goldbacha stała się przyczynkiem do kolejnych rozważań na temat sum liczb pierwszych. Sformułowano m.in. *Słabą hipotezę Goldbacha*, która dotyczy liczb nieparzystych.
+
+\begin{hypothesis}[Słaba hipoteza Goldbacha]
+Każda liczba nieparzysta \textgreater 7 jest sumą trzech nieparzystych liczb pierwszych.
+\label{Goldbach_weak_hyp}
+\end{hypothesis}
+
+Hipoteza nazywana jest słabą wersją hipotezy Goldbacha, bowiem dowodząc prawdziwość silnej hipotezy dowiedziemy prawdziwość hipotezy słabej. Wystarczy bowiem od liczby nieparzystej odjąć 3 (liczbę pierwszą), aby otrzymać liczbę parzystą \textgreater 2, która musiałaby być sumą dwóch liczb pierwszych, co potwierdzałoby, że dana liczba nieparzysta $n$ jest sumą trzech liczb pierwszych: 3 i dwóch liczb pierwszych będących rozkładem Goldbacha liczby $n-3$. Czasami spotyka się wersję hipotezy $\ref{Goldbach_weak_hyp}$ uwzględniającą liczbę nieparzystą 7:
+
+\begin{hypothesis}[Słaba hipoteza Goldbacha z uwzględnieniem liczby 7]
+Każda liczba nieparzysta \textgreater 5 jest sumą trzech liczb pierwszych.
+\label{Goldbach_weak_hyp_with_seven}
+\end{hypothesis}
+
+*Słaba hipoteza Goldbacha* została udowodniona w maju 2013 roku przez Haralda Helfgotta \cite{helfgott2013}, który zwieńczył trop podjęty przez Ivana Vinogradova. Vinogradov w 1930 roku wykazał, że każda wystarczająco duża liczba nieparzysta może zostać zapisana za pomocą sumy trzech liczb pierwszych. Konstantin Borozdin, uczeń Vinogradova, wykazał, że ta dostatecznie duża liczba to $3^{3^{15}}$. W 2002 roku oszacowanie to zostało poprawione przez Liu Ming-Chit i Wang Tian-Ze na takie, iż każda liczba nieparzysta $n$ \textgreater $e^{3100}$  $\approx$ 2 $\times$ $10^{1346}$ spełnia słabą hipotezę Goldbacha, co i tak pozostawało poza zasięgiem weryfikacji obliczeniowej nawet przy użyciu współczesnych komputerów. Harald Helfgott podsumował swój wywód w obszernym opracowaniu \cite{helfgott2015}.
+
+\begin{theorem}
+Każda liczba nieparzysta \textgreater 5 jest sumą trzech liczb pierwszych.
+\end{theorem}
+\begin{proof}
+TBD
+\end{proof}
+
+\begin{figure}
+\centering
+
+\subfloat{
+  \begin{minipage}{\columnwidth}\footnotesize
+  \centering
+  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_avg_diff_pairs}}{a) Średnia różnica (arytmetyczna) w $R(n)$}%
+  \qquad
+  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_max_diff_pairs}}{b) Największa różnica w $R(n)$}
+
+  \medskip
+
+  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_min_diff_pairs}}{c) Najmniejsza różnica w $R(n)$}%
+  \qquad
+  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_min_prime_in_sum}}{d) Minimalna liczba pierwsza w $R(n)$}
+  \end{minipage}}
+
+\caption{Obserwacje dotyczące Hipotezy Goldbacha dla liczb parzystych 2 \textless $n$ \textless $10^6$}
+\end{figure}
+
+\begin{hypothesis}[Hipoteza Levy'ego]
+Każda liczba nieparzysta \textgreater 5 jest sumą liczby pierwszej i podwojonej liczby pierwszej.
+\label{Levy_hyp}
+\end{hypothesis}
+
+\newpage
+
+%=============================================
+% JAK ZBADAĆ, ŻE LICZBA JEST PIERWSZA
+%=============================================
+
+\section{Jak zbadać, że liczba jest pierwsza?}
+
+\newpage
+
+%=============================================
+% ILE JEST LICZB PIERWSZYCH?
+%=============================================
+
+\newpage
+
+\section{Czy znamy wszystkie liczby pierwsze?}
+
+\subsection{Ile jest liczb złożonych?}
+
+\begin{theorem}
+Liczb złożonych jest nieskończenie wiele.
+\end{theorem}
+ 
+\begin{proof}
+TBD
+\end{proof}
+
+\subsection{Ile jest liczb pierwszych?}
+
+Zbadajmy liczność zbioru liczb pierwszych.
+
+\begin{theorem}
+Liczb pierwszych jest nieskończenie wiele.
+\end{theorem}
+ 
+\begin{proof}
+Niech liczby $p_1$, $p_2$, $p_3$, $\ldots$ , $p_n$ tworzą skończony zbiór wszystkich liczb pierwszych $\mathbb{P}$. Stwórzmy nową liczbę $q$: $$ q = p_1 \times p_2 \times p_3 \times \ldots \times p_n + 1$$ i niech $p$ będzie liczbą pierwszą, która dzieli $q$. Na mocy założenia $p$ $\in$ $\mathbb{P}$.
+$q$ \textgreater 1, bowiem najmniejszą z liczb pierwszych jest 2, zatem na mocy twierdzenia *O co najmniej jednym dzielniku pierwszym liczby całkowitej większej od jedności* liczba $p$ istnieje. $p$ dzieli liczbę $p_1$ $\times$ $p_2$ $\times$ $p_3$ $\times$ $\ldots$ $\times$ $p_n$, jednakże $p$ nie jest żadną z liczb  $p_1$, $p_2$, $p_3$, $\ldots$ , $p_n$, bowiem $p$ dzieliłoby $q$ - $p_1$ $\times$ $p_2$ $\times$ $p_3$ $\times$ $\ldots$ $\times p_n$ = 1, co jest niemożliwe. W takim razie zbiór $\mathbb{P}$ nie był kompletny - nie zawierał liczby pierwszej $p$, co stoi w sprzeczności z początkowym założeniem.
+\end{proof}
+
+\subsection{Ile jest liczb pierwszych bliźniaczych?}
+
+\begin{hypothesis}[Hipoteza liczb pierwszych bliźniaczych]
+Liczb pierwszych bliźniaczych jest nieskończenie wiele.
+\label{Twin_primes_hyp}
+\end{hypothesis}
+
+\newpage
+
+%=============================================
+% JAK GĘSTO LEŻĄ LICZBY PIERWSZE?
+%=============================================
+
+\section{Jak gęsto leżą liczby pierwsze?}
+
+\subsection{Liczby pierwsze pomiędzy dwiema liczbami}
+
+\begin{theorem}
+Jeśli $n$ jest liczbą całkowitą \textgreater 2, to między $n$ a $n!$ jest co najmniej jedna liczba pierwsza.
+\end{theorem}
+
+\begin{proof}
+Niech $q$ = $n!$ - 1. $q$ \textgreater 1, bowiem $n$ \textgreater 2. Zatem na mocy twierdzenia *O co najmniej jednym dzielniku pierwszym liczby całkowitej większej od jedności* liczba $q$ ma dzielnik pierwszy $p$. $p$ $\leq$ $q$ = $n!$ - 1 \textless $n!$, tak więc $p$ \textless $n!$. Gdyby $p$ $\leq$ $n$, to (będąc także dzielnikiem $q$ = $n!$ -1) $p$ byłoby również jednym z czynników iloczynu $n!$ = 1 $\times$ 2 $\times$ 3 $\times$ $\ldots$ $\times$ $n$ (czyli $p$ dzieliłoby $n!$), co jest niemożliwe, bo $p$ musiałoby być wtedy także dzielnikiem $n!$ - $q$ = $n!$ - ($n!$ - 1) = 1. Dlatego też $p$ \textgreater $n$. Zatem łącząc dolne i górne oszacowanie $p$ mamy: $n$ \textless $p$ \textless $n!$.
+\end{proof}
+
+\begin{theorem}[Postulat Bertranda, Twierdzenie Bertranda-Czebyszewa]
+Jeśli $n$ jest liczbą całkowitą $\geq$ 1, to istnieje liczba pierwsza $p$, taka, że $n$ $\textless$ $p$ $\leq$ $2n$.
+\end{theorem}
+
+Hipoteza zwana postulatem Bertanda została sformułowana w 1845 roku przez francuskiego matematyka, Josepha Bertranda (pierwotna wersja postulatu brzmiała:  dla każdej liczby całkowitej $n$ $\textgreater$ $3$ istnieje liczba pierwsza $p$ taka, że $n$ $\textless$ $p$ $\textless$ $2n-2$. Hipotezę udowodnił w 1850 roku rosyjski matematyk, Pafnutij Czebyszow.
+
+\subsection{Odstępy między liczbami pierwszymi}
+
+\begin{definition} [O odstępie między liczbami pierwszymi]
+Odstępem między liczbami pierwszymi nazywamy różnicę pomiędzy sąsiednimi liczbami pierwszymi.	 Niech $p_i$ oznacza i-tą liczbą pierwszą. Wtedy i-ty odstęp pierwszy, oznaczany jako $g_i$ lub $g(p_i)$, wynosi: $g_i = p_{n+1} - p_n$.
+\end{definition}
+
+Z definicji *O odstępie między liczbami pierwszymi* wynika, że pomiędzy dwiema kolejnymi liczbami pierwszymi $p_i$ oraz $p_{i+1}$ jest $g_i$ - 1 liczb złożonych. \par
+
+Sekwencja A001223 przedstawia pierwszych 60 odstępów liczb pierwszych. Przyjrzyjmy się możliwym wartościom $g_i$, w tym wartościom ekstremalnym.
+
+\begin{capability}[Tylko jeden odstęp pierwszy jest równy jedności]
+Istnieje tylko jeden odstęp pierwszy o wartości 1 - znajduje się on między najmniejszymi liczbami pierwszymi 2 i 3.
+\end{capability}
+
+Własność *Tylko jeden odstęp pierwszy jest równy jedności* wynika z tego, że istnieje tylko jedna liczba pierwsza parzysta ($2$), po której następuje liczba pierwsza nieparzysta ($3$). Wszystkie kolejne liczby pierwsze są nieparzyste, tak więc oddalone są od siebie o co najmniej $2$.
+
+\begin{capability}[Drugi i każdy kolejny odstęp pierwszy jest liczbą parzystą]
+Prócz pierwszego odstępu pierwszego, wszystkie kolejne odstępy pierwsze są liczbami parzystymi.
+\end{capability}
+
+Własność *Drugi i każdy kolejny odstęp pierwszy jest liczbą parzystą* wynika z własności *Druga i każda kolejna liczba pierwsza są nieparzyste*. Jeśli liczby $p_i$ oraz $p_{i+1}$ są liczbami pierwszymi bliźniaczymi, to $g_i$ = 2. 
+
+\begin{capability}[Odstęp pierwszy może być dowolnie duży]
+Odstęp pierwszy może być dowolnie dużą liczbą parzystą.
+\end{capability}
+
+W naiwny sposób łatwo zbudować ciąg kolejnych liczb naturalnych, w których występuje odstęp pierwszy o co najmniej zadanej długości. Jeśli $n \textgreater 1$, to każda z liczb w ciągu: $$n!+2, n!+3, n!+4, n!+5, \ldots, n!+n$$ jest złożona ($2$ $\mid$ $n!+2$, $3$ $\mid$ $n!+3$, \ldots, $n$ $\mid$ $n!+n$). Jeśli $p_i$ jest największą liczbą pierwszą $\textless n!+2$, to $g(p_i) \geq n$. 
+
+\begin{capability}[Najdłuższy podciąg kolejnych odstępów pierwszych złożony z 2 ma długość 2]
+W ciągu kolejnych odstępów $g_i$ między liczbami pierwszymi istnieje tylko jeden podciąg 2, 2. Znajdujący się między liczbami pierwszymi 3, 5 i 7.
+\end{capability}
+
+
+
+\newpage
+
+%=============================================
+% POSTĘPY ZŁOŻONE Z LICZB PIERWSZYCH
+%=============================================
+
+\section{Postępy złożone z liczb pierwszych}
+
+\newpage
+
+%=============================================
+% SEKWENCJE LICZB ZWIĄZANE Z LICZBAMI PIERWSZYMI
+%=============================================
+
+\begin{landscape}
+
+\section{Sekwencje liczb związane z liczbami pierwszymi}
+
+Źródło: http://oeis.org
+
+\begin{tabularx}{\linewidth}{ |c|X|X| }
+  \hline 
+  \rowcolor{LightCyan}
+  Ciąg & Opis ciągu & Wartości ciągu \\
+  \hline
+A000040 & Liczby pierwsze. &
+[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,
+ 61,67,71,73,79,83,89,97,101,103,107,109,113,127,
+ 131,137,139,149,151,157,163,167,173,179,181,191,
+ 193,197,199,211,223,227,229,233,239,241,251,257,
+ 263,269,271] \\
+  \hline
+A000396 & Liczby doskonałe. &
+[6,28,496,8128,33550336,8589869056,137438691328,2305843008139952128,
+ 2658455991569831744654692615953842176,
+ 191561942608236107294793378084303638130997321548169216] \\
+  \hline
+A001031 & Liczba dekompozycji pierwszych liczb parzystych dodatnich na nieuporządkowaną sumę dwóch liczb pierwszych, uznając 1 za liczbę pierwszą. & 
+[1,2,2,2,2,2,3,2,3,3,3,4,3,2,4,3,4,4,3,3,5,4,4,6,
+ 4,3,6,3,4,7,4,5,6,3,5,7,6,5,7,5,5,9,5,4,10,4,5,7,
+ 4,6,9,6,6,9,7,7,11,6,6,12,4,5,10,4,7,10,6,5,9,8,8,
+ 11,6,5,13,5,8,11,6,8,10,6,6,14,9,6,12,7,7,15,7,8,
+ 13,5,8,12,8,9] \\
+  \hline
+A001223 & Różnice pomiędzy kolejnymi liczbami pierwszymi. & 
+[1,2,2,4,2,4,2,4,6,2,6,4,2,4,6,6,2,6,4,2,6,4,6,8,
+ 4,2,4,2,4,14,4,6,2,10,2,6,6,4,6,6,2,10,2,4,2,12,
+ 12,4,2,4,6,2,10,6,6,6,2,6,4,2,10,14,4,2,4,14,6,10,
+ 2,4,6,8,6,6,4,6,8,4,8,10,2,10,2,6,4,6,8,4,2,4,12,
+ 8,4,8,4,6,12] \\
+  \hline
+A002375 & Liczba dekompozycji pierwszych liczb parzystych dodatnich na nieuporządkowaną sumę dwóch nieparzystych liczb pierwszych. & 
+[0,0,1,1,2,1,2,2,2,2,3,3,3,2,3,2,4,4,2,3,4,3,4,5,
+ 4,3,5,3,4,6,3,5,6,2,5,6,5,5,7,4,5,8,5,4,9,4,5,7,3,
+ 6,8,5,6,8,6,7,10,6,6,12,4,5,10,3,7,9,6,5,8,7,8,11,
+ 6,5,12,4,8,11,5,8,10,5,6,13,9,6,11,7,7,14,6,8,13,
+ 5,8,11,7,9] \\
+  \hline
+A045917 & Liczba dekompozycji pierwszych liczb parzystych dodatnich na nieuporządkowaną sumę dwóch liczb pierwszych. & 
+[0,1,1,1,2,1,2,2,2,2,3,3,3,2,3,2,4,4,2,3,4,3,4,5,
+ 4,3,5,3,4,6,3,5,6,2,5,6,5,5,7,4,5,8,5,4,9,4,5,7,3,
+ 6,8,5,6,8,6,7,10,6,6,12,4,5,10,3,7,9,6,5,8,7,8,11,
+ 6,5,12,4,8,11,5,8,10,5,6,13,9,6,11,7,7,14,6,8,13,
+ 5,8,11,7,9] \\
+  \hline
+\end{tabularx}
+
+\end{landscape}
+
+\newpage
+
+%=============================================
+% BIBLIOGRAFIA
+%=============================================
+
+\begin{thebibliography}{9}
+
+\bibitem{github}
+  Barylski, Marcin:
+  \emph{Goldbach conjecture verification framework.}
+  https://github.com/mbarylsk/goldbach-partition,
+  2016.
+\bibitem{euklides}
+  Euklides:
+  \emph{Stoicheia},
+  IV wiek p.n.e.
+\bibitem{goldbach1742}
+  Goldbach, Christian:
+  \emph{On the margin of a letter to Leonard Euler},
+  1742.
+\bibitem{helfgott2013}
+   Helfgott, Harald:
+  \emph{The ternary Goldbach conjecture is true.}
+  https://arxiv.org/abs/1312.7748,
+  2013.
+\bibitem{helfgott2015}
+   Helfgott, Harald:
+  \emph{The ternary Goldbach problem.}
+  https://arxiv.org/abs/1501.05438,
+  2015.
+\bibitem{hilbert1900}
+   Hilbert, David:
+  \emph{Mathematische Probleme.}
+  https://www.math.uni-bielefeld.de/~kersten/hilbert/rede.html,
+  1900.
+\bibitem{nowicki2013}
+   Nowicki, Andrzej:
+  \emph{Liczby pierwsze w postępach matematycznych.}
+  http://www-users.mat.umk.pl/~anow/imperium/pri06.pdf,
+  2013.
+\bibitem{oliveira2012}
+   Oliveira e Silva, Tomás:
+  \emph{Goldbach conjecture verification.}
+  http://sweet.ua.pt/tos/goldbach.html,
+  2012.
+\bibitem{oliveira2002}
+  Oliveira e Silva, Tomás:
+  \emph{Fast implementation of the segmented sieve of Eratosthenes.}
+  http://sweet.ua.pt/tos/software/prime\_sieve.html,
+  2002.
+\bibitem{Sierpinski1961}
+  Sierpiński, Wacław: 
+  \emph{Co wiemy a czego nie wiemy o liczbach pierwszych.}
+  Biblioteka Matematyczna PZWS i czasopisma "Matematyka". Warszawa, 1961.
+
+\end{thebibliography}
+
+\end{document}
