@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Wprowadzenie}{2}
+\contentsline {subsection}{\numberline {1.1}Podzielno\IeC {\'s}\IeC {\'c} liczb}{2}
+\contentsline {subsection}{\numberline {1.2}Liczby pierwsze}{2}
+\contentsline {subsection}{\numberline {1.3}Liczby nie-pierwsze}{2}
+\contentsline {subsection}{\numberline {1.4}Dzielniki pierwsze}{2}
+\contentsline {section}{\numberline {2}Liczby pierwsze jako budulec innych liczb}{4}
+\contentsline {subsection}{\numberline {2.1}Liczby naturalne zbudowane z liczb pierwszych}{4}
+\contentsline {subsection}{\numberline {2.2}Liczby doskona\IeC {\l }e zbudowane z liczb pierwszych}{4}
+\contentsline {subsection}{\numberline {2.3}Liczby parzyste zbudowane z liczb pierwszych}{4}
+\contentsline {subsection}{\numberline {2.4}Liczby nieparzyste zbudowane z liczb pierwszych}{5}
+\contentsline {section}{\numberline {3}Jak zbada\IeC {\'c}, \IeC {\.z}e liczba jest pierwsza?}{7}
+\contentsline {section}{\numberline {4}Czy znamy wszystkie liczby pierwsze?}{8}
+\contentsline {subsection}{\numberline {4.1}Ile jest liczb z\IeC {\l }o\IeC {\.z}onych?}{8}
+\contentsline {subsection}{\numberline {4.2}Ile jest liczb pierwszych?}{8}
+\contentsline {subsection}{\numberline {4.3}Ile jest liczb pierwszych bli\IeC {\'z}niaczych?}{8}
+\contentsline {section}{\numberline {5}Jak g\IeC {\k e}sto le\IeC {\.z}\IeC {\k a} liczby pierwsze?}{9}
+\contentsline {subsection}{\numberline {5.1}Liczby pierwsze pomi\IeC {\k e}dzy dwiema liczbami}{9}
+\contentsline {subsection}{\numberline {5.2}Odst\IeC {\k e}py mi\IeC {\k e}dzy liczbami pierwszymi}{9}
+\contentsline {section}{\numberline {6}Post\IeC {\k e}py z\IeC {\l }o\IeC {\.z}one z liczb pierwszych}{10}
+\contentsline {section}{\numberline {7}Sekwencje liczb zwi\IeC {\k a}zane z liczbami pierwszymi}{11}
+\contentsline {section}{Bibliografia}{12}
