@@ -214,7 +214,8 @@ Już od czasów starożytnych niektóre liczby uważane były za wyjątkowe. Szc
 Liczbą doskonałą nazywamy liczbę naturalną, która jest sumą wszystkich swoich dzielników właściwych.
 \end{definition}
 
-Liczba $6$ jest najmniejszą liczbą doskonałą, bowiem zbiorem jej dzielników właściwych jest $\lbrace 1, 2, 3 \rbrace$ oraz $6 = 1 + 2 +3$. Sekwencja A000396 przedstawia 10 pierwszych liczb doskonałych. Wszystkie znane liczby doskonałe są parzyste. Nie wiadomo, czy istnieją nieparzyste liczby doskonałe.
+Liczba $6$ jest najmniejszą liczbą doskonałą, bowiem zbiorem jej dzielników właściwych jest $\lbrace 1, 2, 3 \rbrace$ oraz $6 = 1 + 2 +3$. Sekwencja A000396 przedstawia 10 pierwszych liczb doskonałych.
+Wszystkie znane liczby doskonałe są parzyste. Nie wiadomo, czy istnieją nieparzyste liczby doskonałe. Jeśli taka liczba istnieje, to musi być wiekszą od $10^{1500}$ \cite{ochemrao2012}. Euler pokazał, że nieparzysta liczba doskonała, jeśli istnieje, musi mieć postać $N = p^{4a+1} \times Q^2$, gdzie $p$ jest liczbą pierwszą postaci $4 \times k+1$ ($a, k \in \mathbb{N}$).
 
 \begin{theorem}[O parzystych liczbach doskonałych]
 Każda parzysta liczba doskonała jest postaci $(2^p - 1) \times 2^{p - 1}$, gdzie $2^p - 1$ jest liczbą pierwszą.
@@ -224,13 +225,43 @@ Każda parzysta liczba doskonała jest postaci $(2^p - 1) \times 2^{p - 1}$, gdz
 TBD
 \end{proof}
 
+\subsection{Liczby pierwsze Mersenne'a}
+
 \begin{definition} [O liczbach Mersenne'a]
-Liczbami Mersenna nazywamy liczby postaci $2^n - 1$, gdzie $n$ jest liczbą naturalną.
+Liczbami Mersenna $M_p$ nazywamy liczby postaci $2^p - 1$, gdzie $p$ jest liczbą naturalną.
 \end{definition}
+
+\begin{theorem}[Warunek konieczny pierwszości liczb Mersenne'a]
+Warunkiem koniecznym, aby liczba Mersenne'a $2^p - 1$ była pierwsza jest to, aby $p$ było liczbą pierwszą.
+\end{theorem}
+
+\begin{proof}
+Niech $n$ będzie dodatnią liczbą złożoną, tzn. istnieją $a, b \in \mathbb{N} \textgreater 1$, że $n = a \times b$. Wtedy: $M_n = 2^n - 1 = 2^{ab} - 1 = (2^a)^b - 1^b = (2^a - 1)(2^{a(b - 1)} + 2^{a(b - 2)} + \ldots + 2^{a(b-b)})$. Oznacza to, że liczba $M_n$ jest złożona, bo w jej rozkładzie są dwa czynniki $\textgreater 1$.
+\end{proof}
+
+Niestety, pierwszość wykładnika $p$ w liczbie Mersenne'a $M_p$ nie jest warunkiem wystarczającym pierwszości $M_p$ (kontrprzykład: $M_{11} = 2^{11} - 1 = 23 \times 89$). Otwarte pozostają również dwie hipotezy (hipoteza $\ref{Mers_comp_prime_index_inf}$ i hipoteza $\ref{Mers_prime_inf}$), tzn. nie wiemy, czy istnieje nieskończenie wiele złożonych liczb Mersenne'a o wykładnikach pierwszych oraz czy pierwszych liczb Mersenne'a jest nieskończenie wiele.
+
+\begin{hypothesis}[O nieskończenie wielu złożonych liczb Mersenne'a o wykładnikach pierwszych]
+Istnieje nieskończenie wiele złożonych liczb Mersenne'a $M_p = 2^p - 1$, gdzie $p$ jest liczbą pierwszą.
+\label{Mers_comp_prime_index_inf}
+\end{hypothesis}
+
+\begin{hypothesis}[O nieskończenie wielu pierwszych liczb Mersenne'a]
+Istnieje nieskończenie wiele pierwszych liczb Mersenne'a.
+\label{Mers_prime_inf}
+\end{hypothesis}
 
 \subsection{Liczby parzyste zbudowane z liczb pierwszych}
 
-W 1742 roku Christian Goldbach w swoim liście do Leonarda Eulera \cite{goldbach1742} wyraził przypuszczenie, że każda nieparzysta liczba naturalna \textgreater 5 może zostać przedstawiona jako suma trzech liczb pierwszych. W tych czasach traktowano liczbę 1 jako liczbę pierwszą. Euler uprościł tę hipotezę twierdząc, że każda liczba parzysta \textgreater 2 jest sumą dwóch liczb pierwszych. Choć finalny kształt hipotezie nadał Euler, nazywana jest ona Hipotezą Goldbacha. Hipoteza Goldbacha do dnia dzisiejszego nie została rozstrzygnięta i jest jednym z bardziej inspirujących problemów w teorii liczb, mających wpływ na rozwój matematyki w XX i XXI woku. Wraz z hipotezą Riemanna widnieje na miejscu 8 listy Hilberta \cite{hilbert1900}, opisującej otwarte wyzwania matematyczne stojące u progu XX wieku.
+W 1742 roku Christian Goldbach w swoim liście do Leonarda Eulera \cite{goldbach1742} wyraził przypuszczenie, że każda nieparzysta liczba naturalna \textgreater 5 może zostać przedstawiona jako suma trzech liczb pierwszych. W tych czasach traktowano liczbę 1 jako liczbę pierwszą. Euler uprościł tę hipotezę twierdząc, że każda liczba parzysta \textgreater 2 jest sumą dwóch liczb pierwszych. Choć finalny kształt hipotezie nadał Euler, nazywana jest ona Hipotezą Goldbacha. Hipoteza Goldbacha do dnia dzisiejszego nie została rozstrzygnięta i jest jednym z bardziej inspirujących problemów w teorii liczb, mających wpływ na rozwój matematyki w XX i XXI wieku. Wraz z hipotezą Riemanna widnieje na miejscu 8 listy Hilberta \cite{hilbert1900}, opisującej otwarte wyzwania matematyczne stojące u progu XX wieku.
+
+\begin{wrapfigure}{hr}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{f_goldbach_pairs}
+  \end{center}
+  \caption{Kometa Goldbacha - liczba możliwych rozkładów Goldbacha dla kolejnych dodatnich liczb parzystych - wykres funkcji $r(n)$ (2 \textless $n$ \textless $10^6$)}
+  \label{fig:goldbach_pairs}
+\end{wrapfigure}
 
 \begin{hypothesis}[Hipoteza Goldbacha]
 Każda liczba parzysta \textgreater 2 jest sumą dwóch liczb pierwszych.
@@ -243,16 +274,28 @@ Równolegle z szukaniem dowodu na prawdziwość hipotezy $\ref{Goldbach_hyp}$, w
 Wyrażenie danej liczby parzystej $n$ \textgreater 2 jako sumy dwóch liczb pierwszych nosi nazwę rozkładu Goldbacha.
 \end{definition}
 
-\begin{wrapfigure}{hr}{0.5\textwidth}
-  \begin{center}
-    \includegraphics[width=0.48\textwidth]{f_goldbach_pairs}
-  \end{center}
-  \caption{Kometa Goldbacha - liczba możliwych rozkładów Goldbacha dla kolejnych dodatnich liczb parzystych - wykres funkcji $r(n)$ (2 \textless $n$ \textless $10^6$)}
-  \label{fig:goldbach_pairs}
-\end{wrapfigure}
-
 Oznaczmy przez $R(n)$ zbiór wszystkich możliwych rozkładów Goldbacha dla $n$, zaś przez $r(n)$ - liczbę takich możliwych rozkładów dla $n$. 
 Wykres $r(n)$ dla kolejnych $n$ tworzy tzw. kometę Goldbacha (Rysunek $\ref{fig:goldbach_pairs}$), ilustrującą rosnący trend dolnego oszacowania $r(n)$. Sekwencja A045917 przedstawia 98 pierwszych wyrazów $r(n)$.
+
+\begin{figure}{hr}
+\centering
+
+\subfloat{
+  \begin{minipage}{\columnwidth}\footnotesize
+  \centering
+  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_avg_diff_pairs}}{a) Średnia różnica (arytmetyczna) w $R(n)$}%
+  \qquad
+  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_max_diff_pairs}}{b) Największa różnica w $R(n)$}
+
+  \medskip
+
+  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_min_diff_pairs}}{c) Najmniejsza różnica w $R(n)$}%
+  \qquad
+  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_min_prime_in_sum}}{d) Minimalna liczba pierwsza w $R(n)$}
+  \end{minipage}}
+
+\caption{Obserwacje dotyczące Hipotezy Goldbacha dla liczb parzystych 2 \textless $n$ \textless $10^6$}
+\end{figure}
 
 \subsection{Liczby nieparzyste zbudowane z liczb pierwszych}
 
@@ -278,26 +321,6 @@ Każda liczba nieparzysta \textgreater 5 jest sumą trzech liczb pierwszych.
 \begin{proof}
 TBD
 \end{proof}
-
-\begin{figure}
-\centering
-
-\subfloat{
-  \begin{minipage}{\columnwidth}\footnotesize
-  \centering
-  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_avg_diff_pairs}}{a) Średnia różnica (arytmetyczna) w $R(n)$}%
-  \qquad
-  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_max_diff_pairs}}{b) Największa różnica w $R(n)$}
-
-  \medskip
-
-  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_min_diff_pairs}}{c) Najmniejsza różnica w $R(n)$}%
-  \qquad
-  \subsubfloat{\includegraphics[width=0.45\columnwidth]{f_goldbach_min_prime_in_sum}}{d) Minimalna liczba pierwsza w $R(n)$}
-  \end{minipage}}
-
-\caption{Obserwacje dotyczące Hipotezy Goldbacha dla liczb parzystych 2 \textless $n$ \textless $10^6$}
-\end{figure}
 
 \begin{hypothesis}[Hipoteza Levy'ego]
 Każda liczba nieparzysta \textgreater 5 jest sumą liczby pierwszej i podwojonej liczby pierwszej.
@@ -520,6 +543,11 @@ A045917 & Liczba dekompozycji pierwszych liczb parzystych dodatnich na nieuporz�
   \emph{Liczby pierwsze w postępach matematycznych.}
   http://www-users.mat.umk.pl/~anow/imperium/pri06.pdf,
   2013.
+\bibitem{ochemrao2012}
+  Ochem, P. and Rao, M.:
+  \emph{Odd Perfect Numbers Are Greater than $10^{15000}$}
+   Math. Comput. 81, 1869-1877,
+   2012.
 \bibitem{oliveira2012}
    Oliveira e Silva, Tomás:
   \emph{Goldbach conjecture verification.}

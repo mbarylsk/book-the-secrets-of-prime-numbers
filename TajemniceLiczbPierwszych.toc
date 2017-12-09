@@ -6,8 +6,9 @@
 \contentsline {section}{\numberline {2}Liczby pierwsze jako budulec innych liczb}{4}
 \contentsline {subsection}{\numberline {2.1}Liczby naturalne zbudowane z liczb pierwszych}{4}
 \contentsline {subsection}{\numberline {2.2}Liczby doskona\IeC {\l }e zbudowane z liczb pierwszych}{4}
-\contentsline {subsection}{\numberline {2.3}Liczby parzyste zbudowane z liczb pierwszych}{4}
-\contentsline {subsection}{\numberline {2.4}Liczby nieparzyste zbudowane z liczb pierwszych}{5}
+\contentsline {subsection}{\numberline {2.3}Liczby pierwsze Mersenne'a}{4}
+\contentsline {subsection}{\numberline {2.4}Liczby parzyste zbudowane z liczb pierwszych}{4}
+\contentsline {subsection}{\numberline {2.5}Liczby nieparzyste zbudowane z liczb pierwszych}{6}
 \contentsline {section}{\numberline {3}Jak zbada\IeC {\'c}, \IeC {\.z}e liczba jest pierwsza?}{7}
 \contentsline {section}{\numberline {4}Czy znamy wszystkie liczby pierwsze?}{8}
 \contentsline {subsection}{\numberline {4.1}Ile jest liczb z\IeC {\l }o\IeC {\.z}onych?}{8}
