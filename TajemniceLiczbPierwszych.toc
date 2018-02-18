@@ -1,8 +1,9 @@
 \contentsline {section}{\numberline {1}Wprowadzenie}{2}
 \contentsline {subsection}{\numberline {1.1}Podzielno\IeC {\'s}\IeC {\'c} liczb}{2}
 \contentsline {subsection}{\numberline {1.2}Liczby pierwsze}{2}
-\contentsline {subsection}{\numberline {1.3}Liczby nie-pierwsze}{2}
-\contentsline {subsection}{\numberline {1.4}Dzielniki pierwsze}{2}
+\contentsline {subsection}{\numberline {1.3}Liczby pierwsze bli\IeC {\'z}niacze}{2}
+\contentsline {subsection}{\numberline {1.4}Liczby nie-pierwsze}{3}
+\contentsline {subsection}{\numberline {1.5}Dzielniki pierwsze}{3}
 \contentsline {section}{\numberline {2}Liczby pierwsze jako budulec innych liczb}{4}
 \contentsline {subsection}{\numberline {2.1}Liczby naturalne zbudowane z liczb pierwszych}{4}
 \contentsline {subsection}{\numberline {2.2}Liczby doskona\IeC {\l }e zbudowane z liczb pierwszych}{4}
@@ -19,4 +20,4 @@
 \contentsline {subsection}{\numberline {5.2}Odst\IeC {\k e}py mi\IeC {\k e}dzy liczbami pierwszymi}{9}
 \contentsline {section}{\numberline {6}Post\IeC {\k e}py z\IeC {\l }o\IeC {\.z}one z liczb pierwszych}{10}
 \contentsline {section}{\numberline {7}Sekwencje liczb zwi\IeC {\k a}zane z liczbami pierwszymi}{11}
-\contentsline {section}{Bibliografia}{12}
+\contentsline {section}{Bibliografia}{13}

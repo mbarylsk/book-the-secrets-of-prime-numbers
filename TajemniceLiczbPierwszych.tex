@@ -53,6 +53,7 @@
 \newtheorem{hypothesis}{Hipoteza}
 \theoremstyle{capability}
 \newtheorem{capability}{Własność}
+\newtheorem{lemma}[theorem]{Lemat}
 
 % These packages are all incorporated in the memoir class to one degree or another...
 
@@ -138,7 +139,7 @@ Dzielnikiem właściwym liczby całkowitej $b$ nazywamy liczbę naturalną $a$ t
 Liczba całkowita $n$ \textgreater 1 jest liczbą pierwszą, jeśli jej jedynymi dodatnimi dzielnikami są 1 oraz $n$. 
 \end{definition}
 
-Definicję *O liczbie pierwszej* można też wyrazić w inny, komplementarny sposób: liczba całkowita $n$ \textgreater 1 jest liczbą pierwszą, jeśli nie jest iloczynem dwóch liczb całkowitych \textgreater 1. Definicja taka akcentuje różnicę liczby pierwszej w porównaniu z liczbą złożoną, która jest iloczynem przynajmniej dwóch liczb całkowitych \textgreater 1. Liczba pierwsza ma dokładnie jeden dzielnik \textgreater 1, równy jej samej. Przykładowo, liczba 11 jest liczbą pierwszą, bowiem jej jedynymi dzielnikami są 1 i 11. Sekwencja A000040 przedstawia początkowe liczby pierwsze.
+Definicję *O liczbie pierwszej* można też wyrazić w inny, komplementarny sposób: liczba całkowita $n$ \textgreater 1 jest liczbą pierwszą, jeśli nie jest iloczynem dwóch liczb całkowitych \textgreater 1. Definicja taka akcentuje różnicę liczby pierwszej w porównaniu z liczbą złożoną, która jest iloczynem przynajmniej dwóch liczb całkowitych \textgreater 1. Liczba pierwsza ma dokładnie jeden dzielnik \textgreater 1, równy jej samej. Przykładowo, liczba 11 jest liczbą pierwszą, bowiem jej jedynymi dzielnikami są 1 i 11. Sekwencja OEIS A000040 przedstawia początkowe liczby pierwsze.
 
 \begin{capability}[Każda liczba pierwsza ma tylko jeden dzielnik właściwy]
 Jedynym dzielnikiem właściwym liczby pierwszej jest 1.
@@ -157,6 +158,21 @@ Wszystkie liczby pierwsze większe od 2 są nieparzyste.
 \end{capability}
 
 Wynika to bezpośrednio z własności *Tylko jedna liczba pierwsza jest parzysta*. Istnieją kolejne liczby pierwsze: $3$, $5$, $7$, \ldots i wszystkie są nieparzyste.
+
+\subsection{Liczby pierwsze bliźniacze}
+
+\begin{definition}[O liczbach pierwszych bliźniaczych]
+Liczby pierwsze bliźniacze to takie liczby pierwsze, między którymi różnica wynosi 2. Mniejsza z tych liczb nazywana jest mniejszą liczbą bliźniaczą, zaś druga - większą liczbą bliźniaczą.
+\end{definition}
+
+Sekwencja OEIS A014574 przedstawia początkowe liczby bliźniacze w postaci $n \pm 1$, zaś sekwencje OEIS A001359 i OEIS A006512 kolejno początkowe mniejsze liczby pierwszy bliżniacze i większe liczby pierwsze bliźniacze.
+
+\begin{lemma}[5 jest jedyną liczbą pierwszą bliźniaczą z dwoma różnymi liczbami pierwszymi]
+Liczba pierwsza 5 jest jedyną liczbą, która jest zarówno liczbą pierwszą bliźniaczą mniejszą (w parze z 7) i liczbą pierwszą bliźniaczą większą (w parze z 3).
+\end{lemma}
+\begin{proof}
+W sekwencji liczb $n, n+2, n+4$ jedna jest zawsze podzielna przez $3$. $n+2$ jest zarazem mniejszą liczbą pierwszą bliźniaczą jak i większą liczbą pierwszą bliźniaczą wtedy i tylko wtedy, gdy wszystkie z liczb $n, n+2, n+4$ są pierwsze. $3$ jest jedyną liczbą pierwszą podzielną przez $3$, tak więc $3$ musi występować w sekwencji $n, n+2, n+4$. $3$ musi być pierwszą liczbą w tej sekwencji, bowiem dwie inne możliwe kombinacje: $1, 3, 5$ oraz $-1, 1, 3$ nie zawierają wyłącznie liczb pierwszych. To oznacza, że jedyną dozwoloną sekwencją jest $3, 5, 7$ oraz $5$ jest jedyną liczbą pierwszą, którą jest liczbą pierwszą bliźniaczą w dwóch parach: $(3, 5)$ i $(5, 7)$.
+\end{proof}
 
 \subsection{Liczby nie-pierwsze}
 
@@ -183,7 +199,7 @@ Każda liczba złożona $n$ \textgreater 1 ma co najmniej jeden dzielnik $\le$ $
 \end{theorem}
  
 \begin{proof}
-Jeśli $n$ jest liczbą złożoną, to istnieją dwie takie liczby całkowite $a$ i $b$ ($a \leq b$), obie mniejsze niż $n$, że: $n = a \times b$. Zatem: $n = a \times b \geq a^2$, skąd wynika, po pierwiastkowaniu obu stron nierówności, że: $a \leq \sqrt{n}$. Liczba $a$ jest \textgreater 1, w przeciwnym razie $b$ nie byłoby mniejsze niż $n$. Zgodnie z twierdzeniem *O co najmniej jednym dzielniku pierwszym liczby całkowitej* liczba $a$ ma dzielnik pierwszy $p$. $p$ jest dzielnikiem dzielnika $a$ liczby $n$, więc $p$ jest też dzielnikiem $n$. $p \leq a \leq \sqrt{n}$, stąd: $p \leq \sqrt{n}$.
+Jeśli $n$ jest liczbą złożoną, to istnieją dwie takie liczby całkowite dodatnie $a$ i $b$ ($a \leq b$), obie mniejsze niż $n$, że: $n = a \times b$. Zatem: $n = a \times b \geq a^2$, skąd wynika, po pierwiastkowaniu obu stron nierówności, że: $a \leq \sqrt{n}$. Liczba $a$ jest \textgreater 1, w przeciwnym razie $b$ nie byłoby mniejsze niż $n$. Zgodnie z twierdzeniem *O co najmniej jednym dzielniku pierwszym liczby całkowitej* liczba $a$ ma dzielnik pierwszy $p$. $p$ jest dzielnikiem dzielnika $a$ liczby $n$, więc $p$ jest też dzielnikiem $n$. $p \leq a \leq \sqrt{n}$, stąd: $p \leq \sqrt{n}$.
 \end{proof}
 
 \newpage
@@ -214,7 +230,7 @@ Już od czasów starożytnych niektóre liczby uważane były za wyjątkowe. Szc
 Liczbą doskonałą nazywamy liczbę naturalną, która jest sumą wszystkich swoich dzielników właściwych.
 \end{definition}
 
-Liczba $6$ jest najmniejszą liczbą doskonałą, bowiem zbiorem jej dzielników właściwych jest $\lbrace 1, 2, 3 \rbrace$ oraz $6 = 1 + 2 +3$. Sekwencja A000396 przedstawia 10 pierwszych liczb doskonałych.
+Liczba $6$ jest najmniejszą liczbą doskonałą, bowiem zbiorem jej dzielników właściwych jest $\lbrace 1, 2, 3 \rbrace$ oraz $6 = 1 + 2 +3$. Sekwencja OEIS A000396 przedstawia 10 pierwszych liczb doskonałych.
 Wszystkie znane liczby doskonałe są parzyste. Nie wiadomo, czy istnieją nieparzyste liczby doskonałe. Jeśli taka liczba istnieje, to musi być wiekszą od $10^{1500}$ \cite{ochemrao2012}. Euler pokazał, że nieparzysta liczba doskonała, jeśli istnieje, musi mieć postać $N = p^{4a+1} \times Q^2$, gdzie $p$ jest liczbą pierwszą postaci $4 \times k+1$ ($a, k \in \mathbb{N}$).
 
 \begin{theorem}[O parzystych liczbach doskonałych]
@@ -407,7 +423,7 @@ Odstępem między liczbami pierwszymi nazywamy różnicę pomiędzy sąsiednimi 
 
 Z definicji *O odstępie między liczbami pierwszymi* wynika, że pomiędzy dwiema kolejnymi liczbami pierwszymi $p_i$ oraz $p_{i+1}$ jest $g_i$ - 1 liczb złożonych. \par
 
-Sekwencja A001223 przedstawia pierwszych 60 odstępów liczb pierwszych. Przyjrzyjmy się możliwym wartościom $g_i$, w tym wartościom ekstremalnym.
+Sekwencja OEIS A001223 przedstawia pierwszych 60 odstępów liczb pierwszych. Przyjrzyjmy się możliwym wartościom $g_i$, w tym wartościom ekstremalnym.
 
 \begin{capability}[Tylko jeden odstęp pierwszy jest równy jedności]
 Istnieje tylko jeden odstęp pierwszy o wartości 1 - znajduje się on między najmniejszymi liczbami pierwszymi 2 i 3.
@@ -431,7 +447,7 @@ W naiwny sposób łatwo zbudować ciąg kolejnych liczb naturalnych, w których 
 W ciągu kolejnych odstępów $g_i$ między liczbami pierwszymi istnieje tylko jeden podciąg 2, 2. Znajdujący się między liczbami pierwszymi 3, 5 i 7.
 \end{capability}
 
-
+Własność *Najdłuższy podciąg kolejnych odstępów pierwszych złożony z 2 ma długość 2* wynika bezpośrednio z lematu *5 jest jedyną liczbą pierwszą bliźniaczą z dwoma różnymi liczbami pierwszymi*.
 
 \newpage
 
@@ -456,7 +472,7 @@ W ciągu kolejnych odstępów $g_i$ między liczbami pierwszymi istnieje tylko j
 \begin{tabularx}{\linewidth}{ |c|X|X| }
   \hline 
   \rowcolor{LightCyan}
-  Ciąg & Opis ciągu & Wartości ciągu \\
+  Ciąg OEIS & Opis ciągu & Wartości ciągu \\
   \hline
 A000040 & Liczby pierwsze. &
 [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,
@@ -484,6 +500,13 @@ A001223 & Różnice pomiędzy kolejnymi liczbami pierwszymi. &
  2,4,6,8,6,6,4,6,8,4,8,10,2,10,2,6,4,6,8,4,2,4,12,
  8,4,8,4,6,12] \\
   \hline
+A001359 & Mniejsze liczby pierwsze bliźniacze. & 
+[3,5,11,17,29,41,59,71,101,107,137,149,179,191,
+ 197,227,239,269,281,311,347,419,431,461,521,569,
+ 599,617,641,659,809,821,827,857,881,1019,1031,
+ 1049,1061,1091,1151,1229,1277,1289,1301,1319,1427,
+ 1451,1481,1487,1607] \\
+  \hline
 A002375 & Liczba dekompozycji pierwszych liczb parzystych dodatnich na nieuporządkowaną sumę dwóch nieparzystych liczb pierwszych. & 
 [0,0,1,1,2,1,2,2,2,2,3,3,3,2,3,2,4,4,2,3,4,3,4,5,
  4,3,5,3,4,6,3,5,6,2,5,6,5,5,7,4,5,8,5,4,9,4,5,7,3,
@@ -491,12 +514,40 @@ A002375 & Liczba dekompozycji pierwszych liczb parzystych dodatnich na nieuporz�
  6,5,12,4,8,11,5,8,10,5,6,13,9,6,11,7,7,14,6,8,13,
  5,8,11,7,9] \\
   \hline
+A005478 & Liczby Fibonacciego, które są liczbami pierwszymi & 
+[2,3,5,13,89,233,1597,28657,514229,433494437,
+ 2971215073,99194853094755497,
+ 1066340417491710595814572169,
+ 19134702400093278081449423917,
+ 475420437734698220747368027166749382927701417016557193662268716376935476241] \\
+ \hline
+A006512 & Większe liczby pierwsze bliźniacze & 
+[5,7,13,19,31,43,61,73,103,109,139,151,181,193,
+ 199,229,241,271,283,313,349,421,433,463,523,571,
+ 601,619,643,661,811,823,829,859,883,1021,1033,
+ 1051,1063,1093,1153,1231,1279,1291,1303,1321,1429,
+ 1453,1483,1489,1609] \\
+  \hline
+A014574  & Średnia w parze liczb pierwszych bliźniaczych. & 
+[4,6,12,18,30,42,60,72,102,108,138,150,180,192,
+ 198,228,240,270,282,312,348,420,432,462,522,570,
+ 600,618,642,660,810,822,828,858,882,1020,1032,
+ 1050,1062,1092,1152,1230,1278,1290,1302,1320,1428,
+ 1452,1482,1488,1608] \\
+  \hline
 A045917 & Liczba dekompozycji pierwszych liczb parzystych dodatnich na nieuporządkowaną sumę dwóch liczb pierwszych. & 
 [0,1,1,1,2,1,2,2,2,2,3,3,3,2,3,2,4,4,2,3,4,3,4,5,
  4,3,5,3,4,6,3,5,6,2,5,6,5,5,7,4,5,8,5,4,9,4,5,7,3,
  6,8,5,6,8,6,7,10,6,6,12,4,5,10,3,7,9,6,5,8,7,8,11,
  6,5,12,4,8,11,5,8,10,5,6,13,9,6,11,7,7,14,6,8,13,
  5,8,11,7,9] \\
+  \hline
+A046704 & Liczby pierwsze, których suma cyfr w rozkładzie dziesiętnym jest liczbą pierwszą. & 
+[2,3,5,7,11,23,29,41,43,47,61,67,83,89,101,113,
+ 131,137,139,151,157,173,179,191,193,197,199,223,
+ 227,229,241,263,269,281,283,311,313,317,331,337,
+ 353,359,373,379,397,401,409,421,443,449,461,463,
+ 467,487,557,571,577,593] \\
   \hline
 \end{tabularx}
 
