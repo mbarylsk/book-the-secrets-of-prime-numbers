@@ -380,8 +380,12 @@ Liczb pierwszych jest nieskończenie wiele.
 \end{theorem}
  
 \begin{proof}
-Niech liczby $p_1$, $p_2$, $p_3$, $\ldots$ , $p_n$ tworzą skończony zbiór wszystkich liczb pierwszych $\mathbb{P}$. Stwórzmy nową liczbę $q$: $$ q = p_1 \times p_2 \times p_3 \times \ldots \times p_n + 1$$ i niech $p$ będzie liczbą pierwszą, która dzieli $q$. Na mocy założenia $p$ $\in$ $\mathbb{P}$.
+(Euklides, 300 p.n.e. \cite{euklides300bc}) Niech liczby $p_1$, $p_2$, $p_3$, $\ldots$ , $p_n$ tworzą skończony zbiór wszystkich liczb pierwszych $\mathbb{P}$. Stwórzmy nową liczbę $q$: $$ q = p_1 \times p_2 \times p_3 \times \ldots \times p_n + 1$$ i niech $p$ będzie liczbą pierwszą, która dzieli $q$. Na mocy założenia $p$ $\in$ $\mathbb{P}$.
 $q$ \textgreater 1, bowiem najmniejszą z liczb pierwszych jest 2, zatem na mocy twierdzenia *O co najmniej jednym dzielniku pierwszym liczby całkowitej większej od jedności* liczba $p$ istnieje. $p$ dzieli liczbę $p_1$ $\times$ $p_2$ $\times$ $p_3$ $\times$ $\ldots$ $\times$ $p_n$, jednakże $p$ nie jest żadną z liczb  $p_1$, $p_2$, $p_3$, $\ldots$ , $p_n$, bowiem $p$ dzieliłoby $q$ - $p_1$ $\times$ $p_2$ $\times$ $p_3$ $\times$ $\ldots$ $\times p_n$ = 1, co jest niemożliwe. W takim razie zbiór $\mathbb{P}$ nie był kompletny - nie zawierał liczby pierwszej $p$, co stoi w sprzeczności z początkowym założeniem.
+\end{proof}
+
+\begin{proof}
+(Saidak, 2005 \cite{saidak2005}.) Niech $n \textgreater 1$ jest liczbą całkowitą. Skoro $n$ i $n+1$ są kolejnymi liczbami całkowitymi, to są względnie pierwsze, tak więc liczba $q_2 = n \times (n+1)$ musi mieć co najmniej dwa różne czynniki pierwsze. Analogicznie, skoro liczby $q_2 = n \times (n+1)$ i $q_2+1 = n \times  (n+1)+1$ są kolejnymi liczbami całkowitymi (a więc są także względnie pierwszymi), to liczba $q_3 = q_2 \times (q_2+1) = n \times (n+1) \times (n \times (n+1) +1)$ ma co najmniej trzy różne czynniki pierwsze: co najmniej dwa pochodzące od $q_2$ i co najmniej jeden od $q_2+1$. Rozumowanie to można kontyuować w nieskończoność.
 \end{proof}
 
 \subsection{Ile jest liczb pierwszych bliźniaczych?}
@@ -566,7 +570,7 @@ A046704 & Liczby pierwsze, których suma cyfr w rozkładzie dziesiętnym jest li
   \emph{Goldbach conjecture verification framework.}
   https://github.com/mbarylsk/goldbach-partition,
   2016.
-\bibitem{euklides}
+\bibitem{euklides300bc}
   Euklides:
   \emph{Stoicheia},
   IV wiek p.n.e.
@@ -609,6 +613,10 @@ A046704 & Liczby pierwsze, których suma cyfr w rozkładzie dziesiętnym jest li
   \emph{Fast implementation of the segmented sieve of Eratosthenes.}
   http://sweet.ua.pt/tos/software/prime\_sieve.html,
   2002.
+\bibitem{saidak2005}
+  Saidak, Filip: 
+  \emph{A new proof of Euclid's theorem.}
+  The American Mathematical Monthly, Vol. 113, No. 10 (Dec., 2006), pp. 937-938. http://dx.doi.org/10.2307/27642094.
 \bibitem{Sierpinski1961}
   Sierpiński, Wacław: 
   \emph{Co wiemy a czego nie wiemy o liczbach pierwszych.}
