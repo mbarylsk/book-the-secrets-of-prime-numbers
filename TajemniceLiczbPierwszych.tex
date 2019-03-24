@@ -133,6 +133,12 @@ Jeśli $a \mid b$, to liczbę $b$ nazywamy wielokrotnością liczby $a$.
 Dzielnikiem właściwym liczby całkowitej $b$ nazywamy liczbę naturalną $a$ taką, że $a$ $\mid$ $b$ oraz $a \textless b$.
 \end{definition}
 
+\begin{definition}[O największym wspólnym dzielniku]
+Największym wspólnym dzielnikiem liczb całkowitych $a$ i $b$ nazywamy największą liczbę $d$ taką, że $d$ $\mid$ $a$ i $d$ $\mid$ $b$, zapisując to $NWD(a, b) = d$.
+\end{definition}
+
+Definicję *O największym wspólnym dzielniku*, za pomocą indukcji matematycznej, można rozszerzyć na dowolną, skończoną liczbę argumentów w $NWD()$.
+
 \subsection{Liczby pierwsze}
 
 \begin{definition}[O liczbie pierwszej]
@@ -174,7 +180,23 @@ Liczba pierwsza 5 jest jedyną liczbą, która jest zarówno liczbą pierwszą b
 W sekwencji liczb $n, n+2, n+4$ jedna jest zawsze podzielna przez $3$. $n+2$ jest zarazem mniejszą liczbą pierwszą bliźniaczą jak i większą liczbą pierwszą bliźniaczą wtedy i tylko wtedy, gdy wszystkie z liczb $n, n+2, n+4$ są pierwsze. $3$ jest jedyną liczbą pierwszą podzielną przez $3$, tak więc $3$ musi występować w sekwencji $n, n+2, n+4$. $3$ musi być pierwszą liczbą w tej sekwencji, bowiem dwie inne możliwe kombinacje: $1, 3, 5$ oraz $-1, 1, 3$ nie zawierają wyłącznie liczb pierwszych. To oznacza, że jedyną dozwoloną sekwencją jest $3, 5, 7$ oraz $5$ jest jedyną liczbą pierwszą, którą jest liczbą pierwszą bliźniaczą w dwóch parach: $(3, 5)$ i $(5, 7)$.
 \end{proof}
 
-\subsection{Liczby nie-pierwsze}
+\subsection{Liczby względnie pierwsze}
+
+\begin{definition}[O liczbach względnie pierwszych]
+Liczby całkowite nazywami względnie pierwszymi, jeśli ich największym wspólnym dzielnikiem (NWD) jest 1.
+\end{definition}
+
+Fakt, że liczby $x, y, \dots , z$ są względnie pierwsze, zapisuje się symbolicznie jako $NWD (x, y,\dots ,z)=1$. 
+
+\begin{capability}[Największy wspólny dzielnik liczb, które nie są względnie pierwsze]
+Jeśli liczby całkowite $x$, $y$, \dots, $z$ nie są względnie pierwsze, to $NWD (x, y,\dots ,z) = d \textgreater 1$, zaś $d$ jest liczbą pierwszą bądź iloczynem liczb pierwszych.
+\end{capability}
+
+\begin{capability}[Najmniejsza wspólna wielokrotność liczb względnie pierwszych]
+Jeśli liczby całkowite $x$ i $y$ są względnie pierwsze, to $NWW (x, y) = x \times y$.
+\end{capability}
+
+\subsection{Liczby złożone}
 
 \begin{definition} [O liczbie złożonej]
 Liczba całkowita $n$ \textgreater 1 jest liczbą złożoną, jeśli nie jest liczbą pierwszą.
@@ -417,12 +439,16 @@ Niech $q$ = $n!$ - 1. $q$ \textgreater 1, bowiem $n$ \textgreater 2. Zatem na mo
 Jeśli $n$ jest liczbą całkowitą $\geq$ 1, to istnieje liczba pierwsza $p$, taka, że $n$ $\textless$ $p$ $\leq$ $2n$.
 \end{theorem}
 
-Hipoteza zwana postulatem Bertanda została sformułowana w 1845 roku przez francuskiego matematyka, Josepha Bertranda (pierwotna wersja postulatu brzmiała:  dla każdej liczby całkowitej $n$ $\textgreater$ $3$ istnieje liczba pierwsza $p$ taka, że $n$ $\textless$ $p$ $\textless$ $2n-2$. Hipotezę udowodnił w 1850 roku rosyjski matematyk, Pafnutij Czebyszow.
+Hipoteza zwana postulatem Bertanda została sformułowana w 1845 roku przez francuskiego matematyka, Josepha Bertranda (pierwotna wersja postulatu brzmiała:  dla każdej liczby całkowitej $n$ $\textgreater$ $3$ istnieje liczba pierwsza $p$ taka, że $n$ $\textless$ $p$ $\textless$ $2n-2$. Hipotezę udowodnił w 1850 roku rosyjski matematyk, Pafnutij Czebyszew.
+
+\begin{theorem}[Erdős]
+Dla dowolnej liczby naturalnej $n \textgreater 6$  między liczbami $n$ a $2n$ znajdują się co najmniej dwie liczby pierwsze – co najmniej jedna postaci $4k+1$ oraz co najmniej jedna postaci $4m+3$. 
+\end{theorem}
 
 \subsection{Odstępy między liczbami pierwszymi}
 
 \begin{definition} [O odstępie między liczbami pierwszymi]
-Odstępem między liczbami pierwszymi nazywamy różnicę pomiędzy sąsiednimi liczbami pierwszymi.	 Niech $p_i$ oznacza i-tą liczbą pierwszą. Wtedy i-ty odstęp pierwszy, oznaczany jako $g_i$ lub $g(p_i)$, wynosi: $g_i = p_{n+1} - p_n$.
+Odstępem między liczbami pierwszymi nazywamy różnicę pomiędzy sąsiednimi liczbami pierwszymi. Niech $p_i$ oznacza i-tą liczbą pierwszą. Wtedy i-ty odstęp pierwszy, oznaczany jako $g_i$ lub $g(p_i)$, wynosi: $g_i = p_{n+1} - p_n$.
 \end{definition}
 
 Z definicji *O odstępie między liczbami pierwszymi* wynika, że pomiędzy dwiema kolejnymi liczbami pierwszymi $p_i$ oraz $p_{i+1}$ jest $g_i$ - 1 liczb złożonych. \par
