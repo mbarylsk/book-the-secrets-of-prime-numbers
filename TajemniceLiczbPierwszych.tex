@@ -28,9 +28,6 @@
 \geometry{margin=1in} % for example, change the margins to 2 inches all round
 % \geometry{landscape} % set up the page for landscape
 %   read geometry.pdf for detailed page layout information
-
-\usepackage{graphicx} % support the \includegraphics command and options
-
 % \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
 %%% PACKAGES
@@ -44,7 +41,6 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{subfig}
 
 \newtheorem{theorem}{Twierdzenie}
 \theoremstyle{definition}
@@ -179,6 +175,38 @@ Liczba pierwsza 5 jest jedyną liczbą, która jest zarówno liczbą pierwszą b
 \begin{proof}
 W sekwencji liczb $n, n+2, n+4$ jedna jest zawsze podzielna przez $3$. $n+2$ jest zarazem mniejszą liczbą pierwszą bliźniaczą jak i większą liczbą pierwszą bliźniaczą wtedy i tylko wtedy, gdy wszystkie z liczb $n, n+2, n+4$ są pierwsze. $3$ jest jedyną liczbą pierwszą podzielną przez $3$, tak więc $3$ musi występować w sekwencji $n, n+2, n+4$. $3$ musi być pierwszą liczbą w tej sekwencji, bowiem dwie inne możliwe kombinacje: $1, 3, 5$ oraz $-1, 1, 3$ nie zawierają wyłącznie liczb pierwszych. To oznacza, że jedyną dozwoloną sekwencją jest $3, 5, 7$ oraz $5$ jest jedyną liczbą pierwszą, którą jest liczbą pierwszą bliźniaczą w dwóch parach: $(3, 5)$ i $(5, 7)$.
 \end{proof}
+
+\subsection{Liczby pierwsze izolowane}
+
+\begin{definition}[O liczbach pierwszych izolowanych]
+Liczba pierwsza $p$ jest izolowana, jeśli żadna z liczb: $p-2$, $p+2$ nie jest liczbą pierwszą.
+\end{definition}
+
+Przykładami liczb pierwszych izolowanych są: 2, 23, 37, 47, 53, 67, 79 (sekwencja OEIS A007510). Innymi słowy, liczba pierwsza $p$ jest izolowana, jeśli nie należy do pary liczb pierwszych bliźniaczych. Najbliższa sąsiednia liczba pierwsza dla danej liczby pierwszej izolowanej jest od niej większa lub mniejsza o co najmniej $4$.
+
+\subsection{Liczby pierwsze czworacze}
+
+\begin{definition}[O liczbach pierwszych czworaczych]
+Liczbami pierwszymi czworaczymi nazywamy liczby pierwsze mające postać $p$, $p+2$, $p+6$ i $p+8$.
+\end{definition}
+
+Liczby pierwsze czworacze zbudowane są z dwóch par różnych liczb pierwszych bliźniaczych w najbliższym możliwym sąsiedztwie.
+
+\subsection{Liczby pierwsze Chena}
+
+\begin{definition}[O liczbach pierwszych Chena]
+Liczbą pierwszą $p$ nazywamy liczbę pierwszą Chena, jeśli $p+2$ jest liczbą pierwszą lub iloczynem dwóch liczb pierwszych.
+\end{definition}
+
+Przykładami liczb pierwszych Chena są: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 (sekwencja A109611). Liczby te zostały nazwane na cześć chińskiego matematyka Chena Jingrun, który badał różne zagadnienia z teorii liczb, w tym udowodnił *Twierdzenie Chena*.
+
+\subsection{Liczby pierwsze Germain}
+
+\begin{definition}[O liczbach pierwszych Germain]
+Liczbą pierwszą $p$ nazywamy liczbę pierwszą Germain, jeśli $2p+1$ jest liczbą pierwszą.
+\end{definition}
+
+Przykładami liczb pierwszych Germain są: 2, 3, 5, 11, 23, 29, 41, 53, 83 (sekwencja A005384).
 
 \subsection{Liczby względnie pierwsze}
 
@@ -315,7 +343,7 @@ Wyrażenie danej liczby parzystej $n$ \textgreater 2 jako sumy dwóch liczb pier
 Oznaczmy przez $R(n)$ zbiór wszystkich możliwych rozkładów Goldbacha dla $n$, zaś przez $r(n)$ - liczbę takich możliwych rozkładów dla $n$. 
 Wykres $r(n)$ dla kolejnych $n$ tworzy tzw. kometę Goldbacha (Rysunek $\ref{fig:goldbach_pairs}$), ilustrującą rosnący trend dolnego oszacowania $r(n)$. Sekwencja A045917 przedstawia 98 pierwszych wyrazów $r(n)$.
 
-\begin{figure}{hr}
+\begin{figure}
 \centering
 
 \subfloat{
@@ -365,6 +393,13 @@ Każda liczba nieparzysta \textgreater 5 jest sumą liczby pierwszej i podwojone
 \label{Levy_hyp}
 \end{hypothesis}
 
+\begin{theorem}[Twierdzenie Chena]
+Każda wystarczająco duża liczba parzysta jest sumą dwóch liczb pierwszych lub liczby pierwszej i iloczynu dwóch liczb pierwszych.
+\end{theorem}
+\begin{proof}
+TBD
+\end{proof}
+
 \newpage
 
 %=============================================
@@ -385,17 +420,19 @@ Każda liczba nieparzysta \textgreater 5 jest sumą liczby pierwszej i podwojone
 
 \subsection{Ile jest liczb złożonych?}
 
+Zbadajmy najpierw liczność zbioru liczb złożonych.
+
 \begin{theorem}
 Liczb złożonych jest nieskończenie wiele.
 \end{theorem}
  
 \begin{proof}
-TBD
+ Niech liczby $n_1$, $n_2$, $n_3$, $\ldots$ , $n_n$ tworzą skończony zbiór wszystkich naturalnych \textgreater 2 liczb złożonych $\mathbb{A}$. Niech $n_{max} = max (n_1, n_2, n_3, \ldots, n_n)$. Stwórzmy nową liczbę: $m = n_{max} \times n_{max}$. Liczba $m$ jest złożona (bo jej dzielnikiem jest $n_{max} \in \mathbb{A}$), ale $m$ nie występuje w zbiorze $\mathbb{A}$ (bowiem kwadrat liczby naturalnej $\textgreater 2$ jest zawsze większy od tej liczby, a $n_{max}$ jest największą liczbą w $\mathbb{A}$). W takim razie zbiór $\mathbb{A}$ nie był kompletny - nie zawierał liczby złożonej $m$, co stoi w sprzeczności z początkowym założeniem.
 \end{proof}
 
 \subsection{Ile jest liczb pierwszych?}
 
-Zbadajmy liczność zbioru liczb pierwszych.
+Zbadajmy następnie liczność zbioru liczb pierwszych.
 
 \begin{theorem}
 Liczb pierwszych jest nieskończenie wiele.
@@ -416,6 +453,14 @@ $q$ \textgreater 1, bowiem najmniejszą z liczb pierwszych jest 2, zatem na mocy
 Liczb pierwszych bliźniaczych jest nieskończenie wiele.
 \label{Twin_primes_hyp}
 \end{hypothesis}
+
+\subsection{Liczba Ferriera}
+
+\begin{definition}[O liczbie Ferriera]
+Liczba Ferriera to najwieksza liczba pierwsza odkryta przed erą elektroniki. 
+\end{definition}
+
+Liczbą Ferriera jest $\frac{2^{148} + 1}{17}$.
 
 \newpage
 
@@ -478,6 +523,16 @@ W ciągu kolejnych odstępów $g_i$ między liczbami pierwszymi istnieje tylko j
 \end{capability}
 
 Własność *Najdłuższy podciąg kolejnych odstępów pierwszych złożony z 2 ma długość 2* wynika bezpośrednio z lematu *5 jest jedyną liczbą pierwszą bliźniaczą z dwoma różnymi liczbami pierwszymi*.
+
+\subsection{Ile jest liczb pierwszych mniejszych niż niż n?}
+
+\begin{definition} [O funkcji będącej liczbą liczb pierwszych mniejszych od danej liczby]
+Funkcja $\pi (x)$, dla danej liczby rzeczywistej $x$, jest liczbą liczb pierwszych nie większych od $x$.
+\end{definition}
+
+\begin{theorem}[Twierdzenie o liczbach pierwszych]
+Wyrażenie $\frac {x}{\ln x}$ jest dobrym przybliżeniem $\pi (x)$.
+\end{theorem}
 
 \newpage
 
@@ -558,12 +613,18 @@ A006512 & Większe liczby pierwsze bliźniacze &
  1051,1063,1093,1153,1231,1279,1291,1303,1321,1429,
  1453,1483,1489,1609] \\
   \hline
+A007510  & Izolowane liczby pierwsze. & 
+[2, 23, 37, 47, 53, 67, 79, 83, 89, 97, 113, 127, 131, 157, 163, 167, 173, 211, 223, 233, 251, 257, 263, 277, 293, 307, 317, 331, 337, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 439, 443, 449, 457, 467, 479, 487, 491, 499, 503, 509, 541, 547, 557, 563] \\
+  \hline
 A014574  & Średnia w parze liczb pierwszych bliźniaczych. & 
 [4,6,12,18,30,42,60,72,102,108,138,150,180,192,
  198,228,240,270,282,312,348,420,432,462,522,570,
  600,618,642,660,810,822,828,858,882,1020,1032,
  1050,1062,1092,1152,1230,1278,1290,1302,1320,1428,
  1452,1482,1488,1608] \\
+  \hline
+A109611 & Liczby pierwsze Chena. & 
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 47, 53, 59, 67, 71, 83, 89, 101, 107, 109, 113, 127, 131, 137, 139, 149, 157, 167, 179, 181, 191, 197, 199, 211, 227, 233, 239, 251, 257, 263, 269, 281, 293, 307, 311, 317, 337, 347, 353, 359, 379, 389, 401, 409]] \\
   \hline
 A045917 & Liczba dekompozycji pierwszych liczb parzystych dodatnich na nieuporządkowaną sumę dwóch liczb pierwszych. & 
 [0,1,1,1,2,1,2,2,2,2,3,3,3,2,3,2,4,4,2,3,4,3,4,5,
