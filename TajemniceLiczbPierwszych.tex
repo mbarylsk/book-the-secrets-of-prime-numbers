@@ -80,6 +80,9 @@
 \definecolor{LightCyan}{rgb}{0.88,1,1}
 \newcolumntype{a}{>{\columncolor{Gray}}c}
 \newcolumntype{b}{>{\columncolor{white}}c}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
 \newcommand{\subsubfloat}[2]{%
   \begin{tabular}{@{}c@{}}#1\\#2\end{tabular}%
@@ -208,6 +211,16 @@ Liczbą pierwszą $p$ nazywamy liczbę pierwszą Germain, jeśli $2p+1$ jest lic
 
 Przykładami liczb pierwszych Germain są: 2, 3, 5, 11, 23, 29, 41, 53, 83 (sekwencja A005384).
 
+\subsection{Liczby pierwsze Ramanujana}
+
+\subsection{Liczby pierwsze Wiefericha}
+
+\begin{definition}[O liczbach pierwszych Wiefericha]
+Liczbę pierwszą $p$ nazywamy liczbą pierwszą Wiefericha, jeżeli $p^{2}$ dzieli $2^{p-1}-1$.
+\end{definition}
+
+Dotychczas znamy tylko dwie liczby pierwsze Wiefericha: $1093$ oraz $3511$ (sekwencja A001220).
+
 \subsection{Liczby względnie pierwsze}
 
 \begin{definition}[O liczbach względnie pierwszych]
@@ -318,6 +331,13 @@ Istnieje nieskończenie wiele pierwszych liczb Mersenne'a.
 \end{hypothesis}
 
 \subsection{Liczby parzyste zbudowane z liczb pierwszych}
+
+\begin{theorem}[O sumie kolejnych liczb pierwszych i trzech dzielnikach właściwych]
+Suma dwóch kolejnych liczb pierwszych większych od 2 ma co najmniej 3 dzielniki właściwe $\textgreater 1$.
+\end{theorem}
+\begin{proof}
+Liczby pierwsze większe od 2 są nieparzyste. Suma dwóch kolejnych liczb pierwszych nieparzystych $p_1$ i $p_2$ ($p_1$ \textless $p_2$) jest liczbą parzystą: $p_1 + p_2 = 2q$, zatem suma ta ma co najmniej dwa dzielniki: $2$ i $q$. $q$ nie może być liczbą pierwszą, bowiem $p_1 \textless q \textless p_2$, a $p_1$ i $p_2$ są z założenia kolejnymi liczbami pierwszymi i nie ma liczby pierwszej między nimi. Stąd też $q$ jest liczbą złożoną, a więc jest iloczynem co najmniej dwóch liczb pierwszych: $q_1$ i $q_2$. Jeśli $q_1$ i $q_2$ są pierwsze, to obie liczby są $\textgreater 1$. Zatem suma $p_1$ i $p_2$ ma co najmniej $3$ dzielniki właściwe: $2$, $q_1$ i $q_2$ - wszystkie $\textgreater 1$.
+\end{proof}
 
 W 1742 roku Christian Goldbach w swoim liście do Leonarda Eulera \cite{goldbach1742} wyraził przypuszczenie, że każda nieparzysta liczba naturalna \textgreater 5 może zostać przedstawiona jako suma trzech liczb pierwszych. W tych czasach traktowano liczbę 1 jako liczbę pierwszą. Euler uprościł tę hipotezę twierdząc, że każda liczba parzysta \textgreater 2 jest sumą dwóch liczb pierwszych. Choć finalny kształt hipotezie nadał Euler, nazywana jest ona Hipotezą Goldbacha. Hipoteza Goldbacha do dnia dzisiejszego nie została rozstrzygnięta i jest jednym z bardziej inspirujących problemów w teorii liczb, mających wpływ na rozwój matematyki w XX i XXI wieku. Wraz z hipotezą Riemanna widnieje na miejscu 8 listy Hilberta \cite{hilbert1900}, opisującej otwarte wyzwania matematyczne stojące u progu XX wieku.
 
@@ -444,7 +464,7 @@ $q$ \textgreater 1, bowiem najmniejszą z liczb pierwszych jest 2, zatem na mocy
 \end{proof}
 
 \begin{proof}
-(Saidak, 2005 \cite{saidak2005}.) Niech $n \textgreater 1$ jest liczbą całkowitą. Skoro $n$ i $n+1$ są kolejnymi liczbami całkowitymi, to są względnie pierwsze, tak więc liczba $q_2 = n \times (n+1)$ musi mieć co najmniej dwa różne czynniki pierwsze. Analogicznie, skoro liczby $q_2 = n \times (n+1)$ i $q_2+1 = n \times  (n+1)+1$ są kolejnymi liczbami całkowitymi (a więc są także względnie pierwszymi), to liczba $q_3 = q_2 \times (q_2+1) = n \times (n+1) \times (n \times (n+1) +1)$ ma co najmniej trzy różne czynniki pierwsze: co najmniej dwa pochodzące od $q_2$ i co najmniej jeden od $q_2+1$. Rozumowanie to można kontyuować w nieskończoność.
+(Saidak, 2005 \cite{saidak2005}.) Niech $n \textgreater 1$ jest liczbą całkowitą. Skoro $n$ i $n+1$ są kolejnymi liczbami całkowitymi, to są względnie pierwsze, tak więc liczba $q_2 = n \times (n+1)$ musi mieć co najmniej dwa różne czynniki pierwsze. Analogicznie, skoro liczby $q_2 = n \times (n+1)$ i $q_2+1 = n \times  (n+1)+1$ są kolejnymi liczbami całkowitymi (a więc są także względnie pierwszymi), to liczba $q_3 = q_2 \times (q_2+1) = n \times (n+1) \times (n \times (n+1) +1)$ ma co najmniej trzy różne czynniki pierwsze: co najmniej dwa pochodzące od $q_2$ i co najmniej jeden od $q_2+1$. Rozumowanie to można kontynuować w nieskończoność.
 \end{proof}
 
 \subsection{Ile jest liczb pierwszych bliźniaczych?}
@@ -460,7 +480,7 @@ Liczb pierwszych bliźniaczych jest nieskończenie wiele.
 Liczba Ferriera to najwieksza liczba pierwsza odkryta przed erą elektroniki. 
 \end{definition}
 
-Liczbą Ferriera jest $\frac{2^{148} + 1}{17}$.
+Liczbą Ferriera jest $\frac{2^{148} + 1}{17} = 20 988 936 657 440 586 486 151 264 256 610 222 593 863 921$. Ma $44$ cyfry w rozwinięciu dziesiętnym i została znaleziona w 1951 roku przez Aimé Ferriera na kalkulatorze mechanicznym.
 
 \newpage
 
@@ -542,6 +562,13 @@ Wyrażenie $\frac {x}{\ln x}$ jest dobrym przybliżeniem $\pi (x)$.
 
 \section{Postępy złożone z liczb pierwszych}
 
+Prawdopodobnie nie istnieje generyczny wzór, który zwraca wszystkie liczby pierwsze, aczkolwiek istnieje wiele ciekawych wzorów, które pozwalają generować liczby pierwsze. Przykłady:
+
+\begin{itemize}
+\item $n^2 + n + 17$ generuje liczby pierwsze dla $n=1, 2, \dots, 16$
+\item $2n^2 + 29$ generuje liczby pierwsze dla $n=1, 2, \dots, 28$
+\end{itemize}
+
 \newpage
 
 %=============================================
@@ -552,9 +579,9 @@ Wyrażenie $\frac {x}{\ln x}$ jest dobrym przybliżeniem $\pi (x)$.
 
 \section{Sekwencje liczb związane z liczbami pierwszymi}
 
-Źródło: http://oeis.org
+Źródło: http://oeis.org.
 
-\begin{tabularx}{\linewidth}{ |c|X|X| }
+\begin{tabular}{|C{1.8cm}|L{6cm}|L{16cm}|}
   \hline 
   \rowcolor{LightCyan}
   Ciąg OEIS & Opis ciągu & Wartości ciągu \\
@@ -603,7 +630,7 @@ A005478 & Liczby Fibonacciego, które są liczbami pierwszymi &
 [2,3,5,13,89,233,1597,28657,514229,433494437,
  2971215073,99194853094755497,
  1066340417491710595814572169,
- 19134702400093278081449423917,
+ 19134702400093278081449423917, 
  475420437734698220747368027166749382927701417016557193662268716376935476241] \\
  \hline
 A006512 & Większe liczby pierwsze bliźniacze & 
@@ -640,7 +667,7 @@ A046704 & Liczby pierwsze, których suma cyfr w rozkładzie dziesiętnym jest li
  353,359,373,379,397,401,409,421,443,449,461,463,
  467,487,557,571,577,593] \\
   \hline
-\end{tabularx}
+\end{tabular}
 
 \end{landscape}
 

@@ -6,25 +6,27 @@
 \contentsline {subsection}{\numberline {1.5}Liczby pierwsze czworacze}{3}
 \contentsline {subsection}{\numberline {1.6}Liczby pierwsze Chena}{3}
 \contentsline {subsection}{\numberline {1.7}Liczby pierwsze Germain}{3}
-\contentsline {subsection}{\numberline {1.8}Liczby wzgl\IeC {\k e}dnie pierwsze}{3}
-\contentsline {subsection}{\numberline {1.9}Liczby z\IeC {\l }o\IeC {\.z}one}{4}
-\contentsline {subsection}{\numberline {1.10}Dzielniki pierwsze}{4}
+\contentsline {subsection}{\numberline {1.8}Liczby pierwsze Ramanujana}{3}
+\contentsline {subsection}{\numberline {1.9}Liczby pierwsze Wiefericha}{3}
+\contentsline {subsection}{\numberline {1.10}Liczby wzgl\IeC {\k e}dnie pierwsze}{3}
+\contentsline {subsection}{\numberline {1.11}Liczby z\IeC {\l }o\IeC {\.z}one}{4}
+\contentsline {subsection}{\numberline {1.12}Dzielniki pierwsze}{4}
 \contentsline {section}{\numberline {2}Liczby pierwsze jako budulec innych liczb}{5}
 \contentsline {subsection}{\numberline {2.1}Liczby naturalne zbudowane z liczb pierwszych}{5}
 \contentsline {subsection}{\numberline {2.2}Liczby doskona\IeC {\l }e zbudowane z liczb pierwszych}{5}
 \contentsline {subsection}{\numberline {2.3}Liczby pierwsze Mersenne'a}{5}
 \contentsline {subsection}{\numberline {2.4}Liczby parzyste zbudowane z liczb pierwszych}{5}
-\contentsline {subsection}{\numberline {2.5}Liczby nieparzyste zbudowane z liczb pierwszych}{7}
-\contentsline {section}{\numberline {3}Jak zbada\IeC {\'c}, \IeC {\.z}e liczba jest pierwsza?}{8}
-\contentsline {section}{\numberline {4}Czy znamy wszystkie liczby pierwsze?}{9}
-\contentsline {subsection}{\numberline {4.1}Ile jest liczb z\IeC {\l }o\IeC {\.z}onych?}{9}
-\contentsline {subsection}{\numberline {4.2}Ile jest liczb pierwszych?}{9}
-\contentsline {subsection}{\numberline {4.3}Ile jest liczb pierwszych bli\IeC {\'z}niaczych?}{9}
-\contentsline {subsection}{\numberline {4.4}Liczba Ferriera}{9}
-\contentsline {section}{\numberline {5}Jak g\IeC {\k e}sto le\IeC {\.z}\IeC {\k a} liczby pierwsze?}{10}
-\contentsline {subsection}{\numberline {5.1}Liczby pierwsze pomi\IeC {\k e}dzy dwiema liczbami}{10}
-\contentsline {subsection}{\numberline {5.2}Odst\IeC {\k e}py mi\IeC {\k e}dzy liczbami pierwszymi}{10}
-\contentsline {subsection}{\numberline {5.3}Ile jest liczb pierwszych mniejszych ni\IeC {\.z} ni\IeC {\.z} n?}{11}
-\contentsline {section}{\numberline {6}Post\IeC {\k e}py z\IeC {\l }o\IeC {\.z}one z liczb pierwszych}{12}
-\contentsline {section}{\numberline {7}Sekwencje liczb zwi\IeC {\k a}zane z liczbami pierwszymi}{13}
-\contentsline {section}{Bibliografia}{15}
+\contentsline {subsection}{\numberline {2.5}Liczby nieparzyste zbudowane z liczb pierwszych}{6}
+\contentsline {section}{\numberline {3}Jak zbada\IeC {\'c}, \IeC {\.z}e liczba jest pierwsza?}{9}
+\contentsline {section}{\numberline {4}Czy znamy wszystkie liczby pierwsze?}{10}
+\contentsline {subsection}{\numberline {4.1}Ile jest liczb z\IeC {\l }o\IeC {\.z}onych?}{10}
+\contentsline {subsection}{\numberline {4.2}Ile jest liczb pierwszych?}{10}
+\contentsline {subsection}{\numberline {4.3}Ile jest liczb pierwszych bli\IeC {\'z}niaczych?}{10}
+\contentsline {subsection}{\numberline {4.4}Liczba Ferriera}{10}
+\contentsline {section}{\numberline {5}Jak g\IeC {\k e}sto le\IeC {\.z}\IeC {\k a} liczby pierwsze?}{11}
+\contentsline {subsection}{\numberline {5.1}Liczby pierwsze pomi\IeC {\k e}dzy dwiema liczbami}{11}
+\contentsline {subsection}{\numberline {5.2}Odst\IeC {\k e}py mi\IeC {\k e}dzy liczbami pierwszymi}{11}
+\contentsline {subsection}{\numberline {5.3}Ile jest liczb pierwszych mniejszych ni\IeC {\.z} ni\IeC {\.z} n?}{12}
+\contentsline {section}{\numberline {6}Post\IeC {\k e}py z\IeC {\l }o\IeC {\.z}one z liczb pierwszych}{13}
+\contentsline {section}{\numberline {7}Sekwencje liczb zwi\IeC {\k a}zane z liczbami pierwszymi}{14}
+\contentsline {section}{Bibliografia}{16}
